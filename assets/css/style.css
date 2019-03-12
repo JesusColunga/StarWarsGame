@@ -1,0 +1,78 @@
+/* style.css          */
+/* Star Wars RPG Game */
+/*  9/Mar/2019        */
+
+/*html {
+    height: 100%;
+    background-color: black;
+}*/
+
+body {
+    color:              white;
+    background-color: black;
+}
+
+/* - - - -  id  - - - - - */
+#footInfo {
+    text-align:         right;
+    margin-right:       3%;
+    color:              yellowgreen;
+}
+
+#fondo {
+    max-width:          100%;
+    height:             auto;
+    z-index:            -2;
+    position:           absolute;
+}
+
+
+/* - - - -  class  - - - - - */
+.characterImage {
+    width:              auto;
+    height:             80px;
+    border-style:       solid;
+    border-color:       green;
+    padding:            2px;
+    float:              left;
+    margin:             2px;
+}
+
+.imageRow {
+    height:             20%;
+}
+
+.JustificadoDerecha {
+    text-align:         right;
+    margin-right:       3%;
+}
+
+.mainTitle {
+    text-align:         right;
+    margin-right:       15%;
+}
+
+.generalText {
+    color: white;
+    background:black;
+}
+
+
+/* - - -  Media Queries  - - - */
+@media only screen and (max-width: 980px) { 
+    h1 {
+        font-size:      40px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size:      30px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    h1 {
+        font-size:      20px;
+    }
+}

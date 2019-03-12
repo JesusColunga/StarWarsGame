@@ -1,0 +1,128 @@
+<!-- index.html         -->
+<!-- Star Wars RPG Game -->
+<!-- 11/Mar/2019        -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Link to reset.css -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!-- Link to google Fonts -- >
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" -->
+
+    <!-- Link to JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Link to external JavaScript -->
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+    <title> Star Wars RPG Game </title>
+</head>
+
+<body>
+    
+    <img src="assets/images/star wars wallpaper 0.jpeg" class=".img-fluid" id="fondo" alt="Star Wars Ship">
+
+    <header>
+        <h1 class="JustificadoDerecha mainTitle"> Star Wars RPG! </h1>
+    </header>
+
+    <div class="container">
+
+        <div class="row">           <!-- Row 1 -->
+            <p class="h6 generalText"> Available Characters: </p>
+        </div>
+        <div class="row">           <!-- Row 2 -->
+            <span class="border border-success" id="row2">
+            </span>
+        </div>
+    
+        <div class="row">           <!-- Row 3 -->
+            <p class="h6 generalText"> Your Character: </p>
+        </div>
+        <div class="row">           <!-- Row 4 -->
+            <span class="border border-success" id="row4">
+            </span>
+        </div>
+
+
+        <div class="row">           <!-- Row 5 -->
+            <p class="h6 generalText"> Enemies Available to Attack: </p>
+        </div>
+        <div class="row">           <!-- Row 6 -->
+            <span class="border border-success" id="row6">
+            </span>
+        </div>
+    
+        <div class="row">           <!-- Row 7 -->
+            <p class="h6 generalText"> Fight Section: </p>
+        </div>
+        <div class="row">           <!-- Row 8 -->
+        </div>
+
+        <div class="row">           <!-- Row 9 -->
+            <p class="h6 generalText"> Defender: </p>
+        </div>
+        <div class="row">           <!-- Row 10 -->
+            <span class="border border-success" id="row10">
+            </span>
+        </div>
+
+        <div class="row">           <!-- Row 11 -->
+            <p class="h6 generalText"> Messages: </p>
+        </div>
+        <div class="row">           <!-- Row 12 -->
+        </div>
+
+    </div>
+
+    <footer>
+        <hr>
+        <h6 id="footInfo"> Desarollado en PROAPI </h6>    
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<!--
+Dudas:
+- Instrucciones piden usar reset.css
+  Es necesario si utilizo Bootstrap?
+
+- Los valores de Health Points, Attack Power y Counter Attack Power van fijos?
+  No deberían cambiar cada vez que se carga el juego?
+
+  ================
+Notas para mi:
+- El marco del "Character" cambia dependiendo de la sección donde se encuentra:
+ + Todos = blanco
+ + "Your character" = blanco
+ + "Enemies av" = rojo
+ + "Defender" = negro
+-->
