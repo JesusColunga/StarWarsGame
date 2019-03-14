@@ -1,15 +1,10 @@
 /* style.css          */
 /* Star Wars RPG Game */
-/*  9/Mar/2019        */
-
-/*html {
-    height: 100%;
-    background-color: black;
-}*/
+/* 13/Mar/2019        */
 
 body {
     color:              white;
-    background-color: black;
+    background-color:   black;
 }
 
 /* - - - -  id  - - - - - */
@@ -35,7 +30,15 @@ body {
     border-color:       green;
     padding:            2px;
     float:              left;
-    margin:             2px;
+    margin:             10px 5px 10px 5px;
+}
+
+.characterImage2 {
+    width:              auto;
+    height:             80px;
+    border-style:       solid;
+    border-color:       green;
+    margin-left:        20%;
 }
 
 .imageRow {

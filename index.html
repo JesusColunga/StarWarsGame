@@ -1,6 +1,6 @@
 <!-- index.html         -->
 <!-- Star Wars RPG Game -->
-<!-- 11/Mar/2019        -->
+<!-- 12/Mar/2019        -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,6 +65,9 @@
         </div>
         <div class="row">           <!-- Row 6 -->
             <span class="border border-success" id="row6">
+
+
+
             </span>
         </div>
     
@@ -72,6 +75,9 @@
             <p class="h6 generalText"> Fight Section: </p>
         </div>
         <div class="row">           <!-- Row 8 -->
+            <span id="attackButton">
+                <button type="button" class="btn btn-dark badge-pill"> A t t a c k </button>
+            </span>
         </div>
 
         <div class="row">           <!-- Row 9 -->
@@ -79,6 +85,28 @@
         </div>
         <div class="row">           <!-- Row 10 -->
             <span class="border border-success" id="row10">
+
+                <div class="container">   <!--  para imagenes -->
+                    <div class="row">
+                        <div class="col">
+                            <span> Luke Skywalker </span>
+                            <br>
+                            <img src="assets/images/star-wars-luke-skywalker-png-2.png" class="characterImage2">
+                            <br>
+                            <span> dos </span>
+                        </div>
+
+                        <div class="col">
+                            <span> Luke Skywalker </span>
+                            <br>
+                            <img src="assets/images/star-wars-luke-skywalker-png-2.png" class="characterImage2">
+                            <br>
+                            <span> dos </span>
+                        </div>
+    
+                    </div>
+                </div>
+
             </span>
         </div>
 
@@ -86,8 +114,14 @@
             <p class="h6 generalText"> Messages: </p>
         </div>
         <div class="row">           <!-- Row 12 -->
-        </div>
 
+            <div class="card border-success mb-3" style="max-width: 18rem;">
+                    <div class="card-header bg-transparent border-success" style="color:black;"> Luke Skywalker </div>
+                    <div class="card-body text-success">
+                        <img src="assets/images/star-wars-luke-skywalker-png-2.png" class="characterImage2">
+                    </div>
+                    <div class="card-footer bg-transparent border-success" style="color:black;"> puntos </div>
+                  </div>
     </div>
 
     <footer>
@@ -125,4 +159,39 @@ Notas para mi:
  + "Your character" = blanco
  + "Enemies av" = rojo
  + "Defender" = negro
+
+- Una vez seleccionados los personajes
+ + deseable poner "Available Characters" en un tono gris
+   que se note menos.
+ + Queda un punto verde del border
+
+ - The gold of the game is to defeat all enemies
+   reducing their HP to 0 or below
+
+- Si ganas o pierdes debe aparece un boton para restart
+
+- Si le ganas
+  desaparece la imagen del que perdió y
+  aparece el mensaje:
+    you have defeated _____, you can choose to fight another enemy.
+
+=============================================================================
+Bootstrap cards para imagnes. NO FUNCIONO
+                <div class="card text-white bg-dark" style="max-height: 12rem;" >
+                    <div class="card-header">Nombre pers</div>
+                    <img src="assets/images/star-wars-luke-skywalker-png-2.png"
+                         class="img-fluid float-left" 
+                         >
+
+                    <div class="card-footer text-right"> puntos HP </div>
+                </div>
+
+=============================================================================
+html para imagenes. NO FUNCIONÓ
+                <div>
+                    <span> uno </span>
+                        <img src="assets/images/star-wars-luke-skywalker-png-2.png" class="characterImage">
+                    <span> dos </span>
+                </div>
+
 -->

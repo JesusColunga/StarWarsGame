@@ -1,6 +1,6 @@
 /* game.js            */
 /* Star Wars RPG Game */
-/* 11/Mar/2019        */
+/* 12/Mar/2019        */
 
 // GLOBAL VARIABLES
 // =======================================================================================
@@ -55,7 +55,46 @@ var game = {
         image.attr ("alt", character.name);
         image.attr ("data-area", area);   // Is the place on screen where character will be shown.
         $(area).append (image);
-    },  // showCharacter
+    },
+
+    showCharacter2: function (area, character) {
+/*        $(area).append ('
+
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Dark card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+        '); */
+    },
+
+    processUserLoses: function () {
+        alert ("user loses");
+    },
+
+    processUserWins: function () {
+        alert ("user wins");
+        $("#row10").empty ();
+    },
+
+    calculatePoints: function () {
+        game.defender.healthPoints      -= game.userCharacter.attackPower;
+        game.userCharacter.healthPoints -= game.defender.counterAttackPower;
+        game.userCharacter.attackPower  *= 2;
+    },
+
+    processAttack: function () {
+        game.calculatePoints ();
+
+        if (game.defender.healthPoints < 0) {
+            game.processUserWins ();
+        } else
+        if (game.userCharacter.healthPoints < 0 ) {
+            game.processUserLoses ();
+        }
+    },
 
     restart: function () {
         userCharacter   = null;   // "Your Character"
@@ -64,9 +103,10 @@ var game = {
         usrCharSelected = false;
     }
 
+
 }  // game
 
-// FUNCTIONS
+// FUNCTIONS (Definition)
 // =======================================================================================
 function loadAllCharacters () {
     for (ct=0; ct < characters.length; ct++) {
@@ -86,16 +126,22 @@ function showTeams (altName) {
             game.enemies.push ( characters [ct]) ;
         }
     }  // for
+    $("#row2").empty ();
 }  // showTeams
 
+function enableAttackButton () {
+    $("#attackButton").empty ();
+    $("#attackButton").append ( '<button type="button" class="btn btn-danger badge-pill">  A t t a c k  </button>' );
+};
+
 function showDefender (altName) {
-    alert ("algo anda mal por aqui");
     for (ct = 0; ct < characters.length; ct++) {
         if (characters [ct].name === altName) {
             game.showCharacter ("#row10", characters [ct]);
             game.defender = characters [ct];
         }
     }
+    enableAttackButton ();
 }
 
 
@@ -106,24 +152,20 @@ $(document).ready(function() {
         loadAllCharacters ();   // in row 2
     }
 
-    $(".characterImage").on ("click", function () {
-        console.log ("data=" + 
-               $(this).attr ("data-area") +
-               "  /  alt= " +
-               $(this).attr ("alt")
-               );
-        if ($(this).attr ("data-area") == "#row2") {
-            if (game.usrCharSelected === false) {
-                showTeams ( $(this).attr ("alt") );   // Send character name
-            }  // if
-        } else
-        if ($(this).attr ("data-area") == "#row6") {
-            alert ("algo anda mal por aca");
-            showDefender ( $(this).attr ("alt") );   // in row 10. Send character name.
-        } else {
-            alert ("ultimo else");
-        }
+    $("#row2").on ("click", ".characterImage", function () {
+        if (game.usrCharSelected === false) {
+            showTeams ( $(this).attr ("alt") );   // Send character name
+        }  
+    });
 
-    });        // on click
+    $("#row6").on ("click", ".characterImage", function () {
+        if (game.defender === null) {
+            showDefender ( $(this).attr ("alt") );   // in row 10. Send character name.
+        }
+    });
+
+    $("#attackButton").on ("click", function () {
+        game.processAttack ();
+    });
 
 }); // document.ready
