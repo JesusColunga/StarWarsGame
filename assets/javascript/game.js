@@ -1,6 +1,6 @@
 /* game.js            */
 /* Star Wars RPG Game */
-/* 12/Mar/2019        */
+/* 15/Mar/2019        */
 
 // GLOBAL VARIABLES
 // =======================================================================================
@@ -48,7 +48,7 @@ var game = {
     usrCharSelected : false,
     started         : false,
 
-    showCharacter: function (area, character) {
+    showCharacter1: function (area, character) {
         var image = $("<img>");
         image.attr ("src", imagesPath + character.image);
         image.attr ("class", "characterImage");
@@ -57,35 +57,90 @@ var game = {
         $(area).append (image);
     },
 
-    showCharacter2: function (area, character) {
-/*        $(area).append ('
-
-<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h5 class="card-title">Dark card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-        '); */
+    createImage: function (charImage, charName, area) {
+        var image = $("<img>");
+        image.attr ("src", imagesPath + charImage);
+        image.attr ("class", "characterImage");
+        image.attr ("alt", charName);
+        image.attr ("data-area", area);   // Is the place on screen where character will be shown.
+        return image; 
     },
 
-    processUserLoses: function () {
+    createImgCrdFooter: function (healthPoints) {
+        imgCrdFooter = $("<div>");
+        imgCrdFooter.attr ("class", "card-footer  bg-transparent  text-right");
+        imgCrdFooter.attr ("style", "padding:0px 3px 4px 3px;");
+        imgCrdFooter.text (healthPoints);
+        return imgCrdFooter;
+    },
+
+    createImgCrdBody:   function (charImage, charName, area) {
+        var backgrColor;
+
+        switch (area) {
+            case "#row2" : backgrColor = "black" ; break;     // Available Characters (blanco) negro
+            case "#row4" : backgrColor = "green" ; break;     // Your Character (blanco) verde
+            case "#row6" : backgrColor = "yellow"; break;     // Enemies Available to Attack (rojo) amarillo
+            case "#row10": backgrColor = "red"   ; break;     // Defender (negro) rojo
+        }
+
+        imgCrdBody = $("<div>");
+        imgCrdBody.attr ("class", "card-body  text-center  py-1");
+        imgCrdBody.attr ("style", "background:" + backgrColor); 
+        /* falta agregar img aqui: imagesPath + character.image */
+        imgCrdBody.append (game.createImage (charImage, charName, area) ); 
+        return imgCrdBody;
+    },
+
+    createImgCrdHeader: function (name) {
+        imgCrdHeader = $("<div>");
+        imgCrdHeader.attr ("class", "card-header  bg-transparent  text-center");
+        imgCrdHeader.attr ("style", "padding:3px 20px 3px 20px;  min-height: 54px;");
+        imgCrdHeader.text (name);
+        return imgCrdHeader;
+    },
+
+    createImageCard:    function () {
+        imageCard = $("<div>");
+        imageCard.attr ("class", "card  border-success  mr-3  mb-3  col-2");
+        imageCard.attr ("style", "max-width: 9rem;  background: black;")
+        return imageCard;
+    },
+
+    showCharacter:      function (area, character) {
+        var imageCard;
+        var imgCrdHeader;
+        var imgCrdBody;
+        var imgCrdFooter;
+
+        imageCard    = game.createImageCard     ();
+        imgCrdHeader = game.createImgCrdHeader  (character.name);
+        imgCrdBody   = game.createImgCrdBody    (character.image, character.name, area);
+        imgCrdFooter = game.createImgCrdFooter  (character.healthPoints );
+
+        imageCard.append (imgCrdHeader);
+        imageCard.append (imgCrdBody);
+        imageCard.append (imgCrdFooter); 
+
+        $(area).append (imageCard);
+    },
+
+    processUserLoses:   function () {
         alert ("user loses");
     },
 
-    processUserWins: function () {
+    processUserWins:    function () {
         alert ("user wins");
         $("#row10").empty ();
     },
 
-    calculatePoints: function () {
+    calculatePoints:    function () {
         game.defender.healthPoints      -= game.userCharacter.attackPower;
         game.userCharacter.healthPoints -= game.defender.counterAttackPower;
         game.userCharacter.attackPower  *= 2;
     },
 
-    processAttack: function () {
+    processAttack:      function () {
         game.calculatePoints ();
 
         if (game.defender.healthPoints < 0) {
@@ -96,7 +151,7 @@ var game = {
         }
     },
 
-    restart: function () {
+    restart:            function () {
         userCharacter   = null;   // "Your Character"
         enemies         = [];     // "Enemies Available to Attack"
         defender        = null;   // "Defender"

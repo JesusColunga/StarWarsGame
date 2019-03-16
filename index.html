@@ -1,6 +1,6 @@
 <!-- index.html         -->
 <!-- Star Wars RPG Game -->
-<!-- 12/Mar/2019        -->
+<!-- 15/Mar/2019        -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,9 +46,7 @@
         <div class="row">           <!-- Row 1 -->
             <p class="h6 generalText"> Available Characters: </p>
         </div>
-        <div class="row">           <!-- Row 2 -->
-            <span class="border border-success" id="row2">
-            </span>
+        <div class="row" id="row2">           <!-- Row 2 -->
         </div>
     
         <div class="row">           <!-- Row 3 -->
@@ -63,12 +61,35 @@
         <div class="row">           <!-- Row 5 -->
             <p class="h6 generalText"> Enemies Available to Attack: </p>
         </div>
-        <div class="row">           <!-- Row 6 -->
-            <span class="border border-success" id="row6">
+        <div class="row" id="row6">           <!-- Row 6 -->
+            <!-- span class="border border-success" id="row6" -->
+            <!-- span  id="row6" si lo habilito pone la 2da card bajo la primera, en lugar de ponerla a la derecha-->
 
+            <div class="card  border-success  mr-3  mb-3  col-2" style="max-width: 9rem; background:black;">
+                <div class="card-header bg-transparent  text-center" style="padding:3px 20px 3px 20px; min-height: 54px;"> Luke Skywalker </div>
+                <div class="card-body text-center py-1" style="background:red;">
+                    <img src="assets/images/star-wars-luke-skywalker-png-2.png" class="characterImage">
+                </div>
+                <div class="card-footer bg-transparent  text-right" style="padding:0px 3px 4px 3px;"> puntos </div>
+            </div>
 
+            <div class="card  border-success mr-3 mb-3 col-2" style="max-width: 9rem; background:black;">
+                <div class="card-header bg-transparent border-success text-center" style="padding:3px 20px 3px 20px;"> Luke Skywalker </div>
+                <div class="card-body text-center py-1" style="background:red;">
+                    <img src="assets/images/star-wars-luke-skywalker-png-2.png" class="characterImage">
+                </div>
+                <div class="card-footer bg-transparent border-success text-right" style="padding:3px 20px 3px 20px;"> puntos </div>
+            </div>
 
-            </span>
+            <div class="card  border-success  mr-3  mb-3  col-2" style="max-width: 9rem; background:black;">
+                <div class="card-header bg-transparent  text-center" style="padding:3px 20px 3px 20px; min-height: 54px;">  </div>
+                <div class="card-body text-center py-1">
+                    <img src="" class="characterImage">
+                </div>
+                <div class="card-footer bg-transparent  text-right" style="padding:0px 3px 4px 3px;">  </div>
+            </div>
+
+            <!-- /span -->
         </div>
     
         <div class="row">           <!-- Row 7 -->
@@ -91,7 +112,7 @@
                         <div class="col">
                             <span> Luke Skywalker </span>
                             <br>
-                            <img src="assets/images/star-wars-luke-skywalker-png-2.png" class="characterImage2">
+                            <img src="assets/images/star-wars-luke-skywalker-png-2.png" class="characterImage">
                             <br>
                             <span> dos </span>
                         </div>
@@ -99,7 +120,7 @@
                         <div class="col">
                             <span> Luke Skywalker </span>
                             <br>
-                            <img src="assets/images/star-wars-luke-skywalker-png-2.png" class="characterImage2">
+                            <img src="assets/images/star-wars-luke-skywalker-png-2.png" class="characterImage">
                             <br>
                             <span> dos </span>
                         </div>
@@ -115,13 +136,15 @@
         </div>
         <div class="row">           <!-- Row 12 -->
 
-            <div class="card border-success mb-3" style="max-width: 18rem;">
-                    <div class="card-header bg-transparent border-success" style="color:black;"> Luke Skywalker </div>
-                    <div class="card-body text-success">
-                        <img src="assets/images/star-wars-luke-skywalker-png-2.png" class="characterImage2">
-                    </div>
-                    <div class="card-footer bg-transparent border-success" style="color:black;"> puntos </div>
-                  </div>
+            <div class="card  border-success mr-3 mb-3" style="max-width: 10rem; background:black; color:white;"> <!-- ok -->
+                <div class="card-header  border-success text-center" style="padding:3px 20px 3px 20px; background:red;"> Luke Skywalker </div>
+                <div class="card-body text-center py-1">
+                    <img src="assets/images/star-wars-luke-skywalker-png-2.png" class="characterImage">
+                </div>
+                <div class="card-footer  border-success text-right" style="padding:3px 20px 3px 20px; background:red;"> puntos </div>
+            </div>
+
+
     </div>
 
     <footer>
@@ -193,5 +216,15 @@ html para imagenes. NO FUNCIONÓ
                         <img src="assets/images/star-wars-luke-skywalker-png-2.png" class="characterImage">
                     <span> dos </span>
                 </div>
+
+============================================================================
+con bootstrap y cards; original
+            <div class="card border-success mb-3" style="max-width: 18rem;">
+                <div class="card-header bg-transparent border-success" style="color:black;"> Luke Skywalker </div>
+                <div class="card-body text-success">
+                    <img src="assets/images/star-wars-luke-skywalker-png-2.png" class="characterImage">
+                </div>
+                <div class="card-footer bg-transparent border-success" style="color:black;"> puntos </div>
+            </div>
 
 -->
